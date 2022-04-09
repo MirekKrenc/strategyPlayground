@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class StatusExtractor {
+public class StatusExtractor implements SingeDataExtractor<List<String>> {
     static List<Status> patternStatuses = new ArrayList<>();
 
     static {
@@ -13,6 +13,7 @@ public class StatusExtractor {
         patternStatuses.add(new StatusUsed());
     }
 
+    @Override
     public String extract(List<String> PNRStatusList) {
         return patternStatuses.stream()
                 .filter(status -> status.getConditionTest().test(PNRStatusList))
