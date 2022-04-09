@@ -1,6 +1,7 @@
 package strategy.status;
 
-public interface SingeDataExtractor<T> {
+import java.util.List;
 
-    String extract(T source);
+public interface SingeDataExtractor<T> {
+    String extract(List<T> source);
 }

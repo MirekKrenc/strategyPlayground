@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class StatusExtractor implements SingeDataExtractor<List<String>> {
+public class StatusExtractor implements SingeDataExtractor<String> {
     static List<Status> patternStatuses = new ArrayList<>();
-
+    //target as Spring DI @Autowired
     static {
         patternStatuses.add(new StatusOK());
         patternStatuses.add(new StatusPartiallyFilled());
